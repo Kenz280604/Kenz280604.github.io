@@ -3,7 +3,7 @@
     --primary-color: #007bff; /* A nice blue for accents */
     --secondary-color: #6c757d; /* A grey for secondary text */
     --background-color: #1a1a1a; /* Dark background */
-    --card-background: #2a2a2a; /* Slightly lighter dark for cards */
+    --card-background: #2a2a2a; /* Slightly brighter dark for cards */
     --text-color: #f8f9fa; /* Light text */
     --link-hover: #0056b3; /* Darker blue on hover */
     --border-color: #444; /* Subtle border for elements */
@@ -106,7 +106,6 @@ img {
 
 /* Hero Section */
 .hero {
-    /* Removed background image from here as it's now set inline for custom colors */
     color: var(--text-color);
     text-align: center;
     padding: 6rem 0;
@@ -114,7 +113,6 @@ img {
     align-items: center;
     justify-content: center;
     min-height: 70vh; /* Make hero section tall enough */
-    /* Add a background color fallback here if inline style is removed */
     background-color: var(--background-color); /* Default if no inline style */
 }
 
@@ -151,20 +149,29 @@ img {
 /* Section Styling */
 .section {
     padding: 4rem 0;
-    /* text-align: center; Removed as h2 will handle its own centering */
+    /* text-align: center; Removed as .container will handle centering */
+}
+
+/* IMPORTANT: Adjusting .container within sections for proper centering of h2 and content */
+.section .container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally within this column */
+    max-width: 1200px; /* Keep the max-width */
+    margin: 0 auto; /* Keep it centered on the page */
+    padding: 0 1.5rem;
+    flex-wrap: nowrap; /* Prevent wrapping in this context */
 }
 
 .section h2 {
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
     position: relative;
-    /* REMOVED: display: inline-block; */
-    display: block; /* Ensure it behaves as a block for full-width centering */
-    width: fit-content; /* Make the block only as wide as its content */
-    margin-left: auto; /* Center the block itself */
-    margin-right: auto; /* Center the block itself */
+    display: block; /* Ensure it behaves as a block */
+    width: 100%; /* Take full width to ensure text-align: center works */
+    text-align: center; /* Center the text inside the h2 */
     padding-bottom: 0.5rem;
-    text-align: center; /* Ensure text inside h2 is centered */
+    /* No need for margin: auto if parent is flex-column align-items: center */
 }
 
 .section h2::after {
@@ -183,15 +190,15 @@ img {
 .about-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Ensures content inside about-content is centered */
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto; /* Keep about-content centered itself */
     padding: 0 1.5rem;
-    /* text-align: left; */ /* Removed this to allow content to center within .about-content */
+    text-align: center; /* Center its text content (paragraphs, etc.) */
 }
 
-.about-content .about-text { /* Added this to target specifically the text inside about-content */
-    text-align: left; /* Keep the actual text content left-aligned within its block */
+.about-content .about-text {
+    text-align: left; /* Keep the actual text paragraphs left-aligned for readability */
     max-width: 700px; /* Optional: limit width of text for readability */
     margin-bottom: 2rem;
 }
@@ -283,13 +290,13 @@ img {
     max-width: 600px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    /* text-align: left; Removed this to allow content to center within .contact-info */
+    text-align: center; /* Center its text content */
 }
 
 .contact-info p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    text-align: center; /* Center text within contact info */
+    text-align: center; /* Ensure text within contact info is centered */
 }
 
 .contact-links {
@@ -358,7 +365,13 @@ img {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-start; /* Revert header container to align-items: flex-start on smaller screens for logo/nav stacking */
+    }
+
+    /* Adjust the main content sections' containers for responsive centering */
+    .section .container {
+        align-items: center; /* Keep content centered horizontally */
+        flex-direction: column;
     }
 
     .nav {
@@ -389,7 +402,8 @@ img {
     }
 
     .skills-list {
-        justify-content: flex-start;
+        justify-content: center; /* Ensure skills list centers on mobile */
+        text-align: center; /* Center skills text */
     }
 
     .project-card {
