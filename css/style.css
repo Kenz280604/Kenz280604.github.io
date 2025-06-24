@@ -106,8 +106,7 @@ img {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1500x500/007bff/ffffff?text=Your+Game+Dev+Background') no-repeat center center/cover;
-    /* Placeholder background image, you can replace with your own */
+    /* Removed background image from here as it's now set inline for custom colors */
     color: var(--text-color);
     text-align: center;
     padding: 6rem 0;
@@ -115,6 +114,8 @@ img {
     align-items: center;
     justify-content: center;
     min-height: 70vh; /* Make hero section tall enough */
+    /* Add a background color fallback here if inline style is removed */
+    background-color: var(--background-color); /* Default if no inline style */
 }
 
 .hero-content {
@@ -150,15 +151,20 @@ img {
 /* Section Styling */
 .section {
     padding: 4rem 0;
-    text-align: center;
+    /* text-align: center; Removed as h2 will handle its own centering */
 }
 
 .section h2 {
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
     position: relative;
-    display: inline-block;
+    /* REMOVED: display: inline-block; */
+    display: block; /* Ensure it behaves as a block for full-width centering */
+    width: fit-content; /* Make the block only as wide as its content */
+    margin-left: auto; /* Center the block itself */
+    margin-right: auto; /* Center the block itself */
     padding-bottom: 0.5rem;
+    text-align: center; /* Ensure text inside h2 is centered */
 }
 
 .section h2::after {
@@ -181,7 +187,13 @@ img {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    text-align: left;
+    /* text-align: left; */ /* Removed this to allow content to center within .about-content */
+}
+
+.about-content .about-text { /* Added this to target specifically the text inside about-content */
+    text-align: left; /* Keep the actual text content left-aligned within its block */
+    max-width: 700px; /* Optional: limit width of text for readability */
+    margin-bottom: 2rem;
 }
 
 .about-text p {
@@ -196,6 +208,9 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 2rem;
+    max-width: 800px; /* Constrain width for centering */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .skills-list li {
@@ -268,27 +283,33 @@ img {
     max-width: 600px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    text-align: left;
+    /* text-align: left; Removed this to allow content to center within .contact-info */
 }
 
 .contact-info p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
+    text-align: center; /* Center text within contact info */
 }
 
 .contact-links {
     list-style: none;
     padding: 0;
     margin-top: 2rem;
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally in the column */
 }
 
 .contact-links li {
     margin-bottom: 1rem;
+    text-align: center; /* Ensure text inside list item is centered if it wraps */
 }
 
 .contact-links li a {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center the link content itself */
     font-size: 1.2rem;
     color: var(--text-color);
 }
