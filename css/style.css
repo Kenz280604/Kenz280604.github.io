@@ -5,6 +5,7 @@
     --background-color: #1a1a1a; /* Dark background */
     --card-background: #2a2a2a; /* Slightly brighter dark for cards */
     --text-color: #f8f9fa; /* Light text */
+    --highlight-text-color: #cccccc; /* New: A subtle light grey for bold text */
     --link-hover: #0056b3; /* Darker blue on hover */
     --border-color: #444; /* Subtle border for elements */
 }
@@ -193,7 +194,7 @@ img {
     margin-top: 3rem; /* Space above sub-header */
     margin-bottom: 1.5rem; /* Space below sub-header */
     text-align: center; /* Ensure sub-header is centered */
-    color: var(--primary-color); /* Give it an accent color */
+    color: var(--primary-color); /* Give it an accent color (blue) */
 }
 
 
@@ -214,9 +215,9 @@ img {
     margin-bottom: 2rem;
 }
 
-/* Added style to make strong text within about-text pop */
+/* Updated style to make strong text within about-text use the new highlight color */
 .about-content .about-text strong {
-    color: var(--primary-color); /* Makes bold text use the accent color */
+    color: var(--highlight-text-color); /* Uses the new subtle highlight color */
 }
 
 .about-text p {
