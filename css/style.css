@@ -5,7 +5,7 @@
     --background-color: #1a1a1a; /* Dark background */
     --card-background: #2a2a2a; /* Slightly brighter dark for cards */
     --text-color: #f8f9fa; /* Light text */
-    --highlight-text-color: #cccccc; /* New: A subtle light grey for bold text */
+    --highlight-text-color: #C7E0FF; /* Updated: A brighter, light blue for bold text */
     --link-hover: #0056b3; /* Darker blue on hover */
     --border-color: #444; /* Subtle border for elements */
 }
