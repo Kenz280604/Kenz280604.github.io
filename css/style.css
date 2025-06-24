@@ -214,6 +214,11 @@ img {
     margin-bottom: 2rem;
 }
 
+/* Added style to make strong text within about-text pop */
+.about-content .about-text strong {
+    color: var(--primary-color); /* Makes bold text use the accent color */
+}
+
 .about-text p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
@@ -241,7 +246,7 @@ img {
     font-size: 0.95rem;
     color: var(--text-color); /* Changed to text-color for contrast */
     font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transition for hover */
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Added color transition for hover */
     cursor: pointer; /* Indicates it's interactive */
 }
 
