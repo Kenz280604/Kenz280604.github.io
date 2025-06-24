@@ -3,50 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mckenzie Knowles | Game Development Portfolio</title>
+    <title>Mckenzie Knowles | Game Development Portfolio.</title>
     <link rel="stylesheet" href="css/style.css">
-    </head>
+    <!-- Optional: Add Font Awesome for icons if you want to use them for social links etc. -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+</head>
 <body>
 
+    <!-- Header -->
     <header class="header">
         <div class="container">
-            <div class="logo"><a href="index.html">Mckenzie Knowles</a></div>
+            <div class="logo"><a href="#home">Mckenzie Knowles</a></div>
             <nav class="nav">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="hero-content">
             <h1>Mckenzie Knowles</h1>
             <p>A Game Development Graduate passionate about bringing virtual worlds to life.</p>
             <p>Currently learning C++ to expand my technical skillset.</p>
-            <a href="projects.html" class="btn">View My Projects</a>
+            <a href="#projects" class="btn">View My Projects</a>
         </div>
     </section>
 
-    <section class="section" id="projects-teaser">
+    <!-- Projects Section -->
+    <section class="section" id="projects">
         <div class="container">
-            <h2>My Work</h2>
-            <p>My portfolio will showcase my game development projects, from university work to personal C++ explorations.</p>
-            <p>Projects are currently in the pipeline and will be uploaded here soon!</p>
-            <a href="projects.html" class="btn">See All Projects (Coming Soon)</a>
+            <h2>My Projects</h2>
+            <p>This is where I'll showcase my game development work. Check back soon for exciting updates!</p>
+
+            <div class="projects-grid">
+                <!-- ONE PROJECT CARD EXAMPLE - DUPLICATE THIS BLOCK FOR EACH PROJECT -->
+                <!-- You can remove the "Stay tuned!" paragraph below once you add enough projects. -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x200/007bff/ffffff?text=Project+Thumbnail" alt="Project 1 Thumbnail">
+                    <div class="project-card-content">
+                        <h3>Project Title (e.g., Tactical Shooter AI)</h3>
+                        <p>A brief description of the project and what you achieved. Focus on your specific contributions and technologies used (e.g., "Implemented enemy AI using Unreal Engine Blueprints and state machines," "Developed core gameplay mechanics in C++").</p>
+                        <a href="link-to-project-details-page.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <!-- END ONE PROJECT CARD EXAMPLE -->
+
+                <p style="grid-column: 1 / -1; text-align: center; color: var(--secondary-color); font-size: 1.2rem; margin-top: 2rem;">
+                    Stay tuned! Projects will be uploaded here as they are completed.
+                </p>
+
+            </div>
         </div>
     </section>
 
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <!-- Optional: Add a professional photo here if you wish -->
+                <!-- <img src="https://via.placeholder.com/200x200/cccccc/000000?text=Your+Photo" alt="Your Photo" style="border-radius: 50%; margin-bottom: 2rem;"> -->
+                <div class="about-text">
+                    <p>Hello! I'm **Mckenzie Knowles**, a recent Game Development (Production) graduate from the University of Huddersfield, proudly achieving a 2:1.</p>
+                    <p>My studies provided a strong foundation in game production methodologies, project management, and extensive practical experience with **Unreal Engine Blueprints**, where I focused on implementing gameplay systems and interactive environments.</p>
+                    <p>While my degree emphasized production and visual scripting, I am now dedicated to mastering **C++** to deepen my programming skills and pursue a career in gameplay or technical programming.</p>
+                    <p>I'm passionate about creating engaging gameplay experiences and am eager to contribute my skills and enthusiasm to a dynamic game development team.</p>
+                </div>
+
+                <h3>Skills</h3>
+                <ul class="skills-list">
+                    <li>Unreal Engine (Blueprints)</li>
+                    <li>Game Production</li>
+                    <li>Project Management</li>
+                    <li>Version Control (Git)</li>
+                    <li>Technical Design (if applicable)</li>
+                    <li>C++ (Learning)</li>
+                    <li>Teamwork</li>
+                    <li>Problem Solving</li>
+                </ul>
+
+                <h3>Education</h3>
+                <div class="education-item">
+                    <p><strong>BSc (Hons) Game Development (Production)</strong></p>
+                    <p>University of Huddersfield | 2:1 Classification</p>
+                    <p>September 2022 – June 2025</p>
+                    <p>Key modules included: Advanced Computer Games Development, Games Prototyping, Games Design and Innovation, Multiple Team Projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <p>I'm always open to discussing game development opportunities, collaborations, or just connecting with fellow enthusiasts. Feel free to reach out!</p>
+                <ul class="contact-links">
+                    <li>
+                        <a href="mailto:kenzknowles2806@gmail.com">
+                            <!-- Optional: <i class="fas fa-envelope"></i> -->
+                            kenzknowles2806@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/mckenzie-knowles-2722571b1/" target="_blank">
+                            <!-- Optional: <i class="fab fa-linkedin"></i> -->
+                            Connect on LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Kenz280604" target="_blank">
+                            <!-- Optional: <i class="fab fa-github"></i> -->
+                            Check out my GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Mckenzie Knowles. All rights reserved.</p>
             <ul class="social-links">
                 <li><a href="https://www.linkedin.com/in/mckenzie-knowles-2722571b1/" target="_blank" aria-label="LinkedIn">LinkedIn</a></li>
                 <li><a href="https://github.com/Kenz280604" target="_blank" aria-label="GitHub">GitHub</a></li>
-                </ul>
+            </ul>
         </div>
     </footer>
 
