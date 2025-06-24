@@ -161,7 +161,7 @@ img {
     padding: 0 1.5rem;
 }
 
-/* New wrapper for section titles to guarantee centering */
+/* Wrapper for section titles to guarantee centering */
 .section-header-wrapper {
     width: 100%; /* Ensure the wrapper takes full width to correctly center h2 */
     text-align: center; /* Center the h2 within this wrapper */
@@ -185,6 +185,15 @@ img {
     width: 80px;
     height: 3px;
     background-color: var(--primary-color);
+}
+
+/* Skills Sub-headers within About section */
+.skills-subheader {
+    font-size: 1.8rem; /* Slightly smaller than main section h2 */
+    margin-top: 3rem; /* Space above sub-header */
+    margin-bottom: 1.5rem; /* Space below sub-header */
+    text-align: center; /* Ensure sub-header is centered */
+    color: var(--primary-color); /* Give it an accent color */
 }
 
 
@@ -216,7 +225,8 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 0.5rem; /* Reduced margin, as subheader has margin */
+    margin-bottom: 2rem; /* Space after the list */
     max-width: 800px; /* Constrain width for centering */
     margin-left: auto;
     margin-right: auto;
@@ -229,9 +239,18 @@ img {
     margin: 0.5rem;
     border-radius: 5px;
     font-size: 0.95rem;
-    color: var(--primary-color);
+    color: var(--text-color); /* Changed to text-color for contrast */
     font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transition for hover */
+    cursor: pointer; /* Indicates it's interactive */
 }
+
+.skills-list li:hover {
+    background-color: var(--primary-color); /* Change background on hover */
+    transform: translateY(-3px); /* Subtle lift effect */
+    color: #fff; /* Ensure text is white on blue hover */
+}
+
 
 /* Projects Section (Gallery) */
 .projects-grid {
