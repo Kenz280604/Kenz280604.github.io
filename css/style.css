@@ -5,7 +5,474 @@
     --background-color: #1a1a1a; /* Dark background */
     --card-background: #2a2a2a; /* Slightly brighter dark for cards */
     --text-color: #f8f9fa; /* Light text */
-    --highlight-text-color: #C7E0FF; /* Updated: A brighter, light blue for bold text */
+    --highlight-text-color: #A8D1FF; /* Updated: A light, desaturated blue for bold text */
+    --link-hover: #0056b3; /* Darker blue on hover */
+    --border-color: #444; /* Subtle border for elements */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below images */
+}
+
+/* Header & Navigation */
+.header {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.logo a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 2rem;
+}
+
+.nav ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav ul li a:hover::after,
+.nav ul li a.active::after {
+    width: 100%;
+    left: 0;
+    background: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    color: var(--text-color);
+    text-align: center;
+    padding: 6rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh; /* Make hero section tall enough */
+    background-color: var(--background-color); /* Default if no inline style */
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--link-hover);
+}
+
+/* Section Styling */
+.section {
+    padding: 4rem 0;
+}
+
+/* Container for sections - ensures content within is centered */
+.section .container {
+    display: flex;
+    flex-direction: column; /* Stack children (header and content blocks) vertically */
+    align-items: center; /* Center children horizontally */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Wrapper for section titles to guarantee centering */
+.section-header-wrapper {
+    width: 100%; /* Ensure the wrapper takes full width to correctly center h2 */
+    text-align: center; /* Center the h2 within this wrapper */
+    margin-bottom: 2.5rem; /* Space below the title */
+    position: relative; /* For the ::after pseudo-element */
+}
+
+.section-header-wrapper h2 {
+    font-size: 2.5rem;
+    margin: 0; /* Remove default h2 margins to control spacing via wrapper */
+    padding-bottom: 0.5rem;
+    display: inline-block; /* Allow the ::after line to align under the text */
+}
+
+.section-header-wrapper h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Skills Sub-headers within About section */
+.skills-subheader {
+    font-size: 1.8rem; /* Slightly smaller than main section h2 */
+    margin-top: 3rem; /* Space above sub-header */
+    margin-bottom: 1.5rem; /* Space below sub-header */
+    text-align: center; /* Ensure sub-header is centered */
+    color: var(--primary-color); /* Give it an accent color (blue) */
+}
+
+
+/* About Section - Specific adjustments */
+.about-content {
+    display: flex; /* Keep it flex for internal content layout */
+    flex-direction: column; /* Stack its own children vertically */
+    align-items: center; /* Center its own children (like .about-text, skills-list) */
+    max-width: 800px; /* Max width for readability */
+    margin: 0; /* Remove margin auto here, parent .container handles centering */
+    padding: 0; /* Remove internal padding here if container already has it */
+    text-align: center; /* Fallback for text centering within .about-content */
+}
+
+.about-content .about-text {
+    text-align: left; /* Important: Keep the actual text paragraphs left-aligned for readability */
+    max-width: 700px; /* Max width for the text block */
+    margin-bottom: 2rem;
+}
+
+/* Updated style to make strong text within about-text use the new highlight color */
+.about-content .about-text strong {
+    color: var(--highlight-text-color); /* Uses the new subtle highlight color */
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem; /* Reduced margin, as subheader has margin */
+    margin-bottom: 2rem; /* Space after the list */
+    max-width: 800px; /* Constrain width for centering */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skills-list li {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    padding: 0.7rem 1.2rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    color: var(--text-color); /* Changed to text-color for contrast */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Added color transition for hover */
+    cursor: pointer; /* Indicates it's interactive */
+}
+
+.skills-list li:hover {
+    background-color: var(--primary-color); /* Change background on hover */
+    transform: translateY(-3px); /* Subtle lift effect */
+    color: #fff; /* Ensure text is white on blue hover */
+}
+
+
+/* Projects Section (Gallery) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.project-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures image covers the area nicely */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-card-content {
+    padding: 1.5rem;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.project-card .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+}
+
+/* Contact Section */
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto; /* Ensures it centers itself if its parent doesn't handle it */
+    padding: 0; /* Remove internal padding here if container already has it */
+    text-align: center; /* Center its text content */
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: center; /* Ensure text within contact info is centered */
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally in the column */
+}
+
+.contact-links li {
+    margin-bottom: 1rem;
+    text-align: center; /* Ensure text inside list item is centered if it wraps */
+}
+
+.contact-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the link content itself */
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.contact-links li a:hover {
+    color: var(--primary-color);
+}
+
+.contact-links i { /* For Font Awesome icons, if you add them later */
+    margin-right: 10px;
+    width: 24px; /* Ensure consistent spacing */
+    text-align: center;
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--card-background);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links li a {
+    color: var(--secondary-color);
+    font-size: 1.5rem; /* Placeholder for icon size if you use them */
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start; /* Revert header container to align-items: flex-start on smaller screens for logo/nav stacking */
+    }
+
+    /* Adjust the main content sections' containers for responsive centering */
+    .section .container {
+        align-items: center; /* Keep content centered horizontally */
+        flex-direction: column;
+    }
+
+    .nav {
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .skills-list {
+        justify-content: center; /* Ensure skills list centers on mobile */
+        text-align: center; /* Center skills text */
+    }
+
+    .project-card {
+        margin: 0 0.5rem; /* Add some side margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+}
+```
+I understand, Mckenzie. You want a more distinct but still "faint" blue for the highlighted text, not a flat color.
+
+I've updated the `--highlight-text-color` variable in your `style.css` in the Canvas to a slightly darker, yet still light and desaturated, blue (`#8FC0FF`). This should provide a more noticeable contrast against the default text while still maintaining that soft, non-overpowering feel you're looking for, rather than being "flat."
+
+Here is your updated `css/style.css` file:
+
+
+```css
+/* Basic Resets & Global Styles */
+:root {
+    --primary-color: #007bff; /* A nice blue for accents */
+    --secondary-color: #6c757d; /* A grey for secondary text */
+    --background-color: #1a1a1a; /* Dark background */
+    --card-background: #2a2a2a; /* Slightly brighter dark for cards */
+    --text-color: #f8f9fa; /* Light text */
+    --highlight-text-color: #8FC0FF; /* Updated: A more distinct, faint blue for bold text */
     --link-hover: #0056b3; /* Darker blue on hover */
     --border-color: #444; /* Subtle border for elements */
 }
