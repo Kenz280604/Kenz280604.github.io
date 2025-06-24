@@ -149,16 +149,16 @@ img {
 /* Section Styling */
 .section {
     padding: 4rem 0;
-    /* text-align: center; Removed as .container will handle centering */
 }
 
 /* IMPORTANT: Adjusting .container within sections for proper centering of h2 and content */
+/* This will make the entire content area of a section (including its title) stack vertically and center horizontally */
 .section .container {
     display: flex;
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items horizontally within this column */
     max-width: 1200px; /* Keep the max-width */
-    margin: 0 auto; /* Keep it centered on the page */
+    margin: 0 auto; /* Keep the container centered on the page */
     padding: 0 1.5rem;
     flex-wrap: nowrap; /* Prevent wrapping in this context */
 }
@@ -167,11 +167,11 @@ img {
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
     position: relative;
-    display: block; /* Ensure it behaves as a block */
-    width: 100%; /* Take full width to ensure text-align: center works */
-    text-align: center; /* Center the text inside the h2 */
+    display: block; /* Ensures h2 is always a block element, taking its own line */
+    width: 100%; /* Force it to take full available width to truly center its text */
+    text-align: center; /* Center the text content of the h2 */
     padding-bottom: 0.5rem;
-    /* No need for margin: auto if parent is flex-column align-items: center */
+    /* Removed margin-left/right: auto here as parent align-items: center handles centering */
 }
 
 .section h2::after {
@@ -186,20 +186,21 @@ img {
 }
 
 
-/* About Section */
+/* About Section - Specific adjustments */
+/* The main .about-content should now be centered by its parent .section .container's flex properties */
 .about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Ensures content inside about-content is centered */
-    max-width: 800px;
-    margin: 0 auto; /* Keep about-content centered itself */
-    padding: 0 1.5rem;
-    text-align: center; /* Center its text content (paragraphs, etc.) */
+    display: flex; /* Keep it flex for internal content layout */
+    flex-direction: column; /* Stack its own children vertically */
+    align-items: center; /* Center its own children (like .about-text) */
+    max-width: 800px; /* Max width for readability */
+    margin: 0 auto; /* Ensures it centers itself if its parent doesn't handle it (but it should now) */
+    padding: 0; /* Remove internal padding here if container already has it */
+    text-align: center; /* Fallback for text centering within .about-content */
 }
 
 .about-content .about-text {
-    text-align: left; /* Keep the actual text paragraphs left-aligned for readability */
-    max-width: 700px; /* Optional: limit width of text for readability */
+    text-align: left; /* Important: Keep the actual text paragraphs left-aligned for readability */
+    max-width: 700px; /* Max width for the text block */
     margin-bottom: 2rem;
 }
 
@@ -286,10 +287,11 @@ img {
 }
 
 /* Contact Section */
+/* The main .contact-info should now be centered by its parent .section .container's flex properties */
 .contact-info {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+    margin: 0 auto; /* Ensures it centers itself if its parent doesn't handle it */
+    padding: 0; /* Remove internal padding here if container already has it */
     text-align: center; /* Center its text content */
 }
 
