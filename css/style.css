@@ -5,473 +5,6 @@
     --background-color: #1a1a1a; /* Dark background */
     --card-background: #2a2a2a; /* Slightly brighter dark for cards */
     --text-color: #f8f9fa; /* Light text */
-    --highlight-text-color: #A8D1FF; /* Updated: A light, desaturated blue for bold text */
-    --link-hover: #0056b3; /* Darker blue on hover */
-    --border-color: #444; /* Subtle border for elements */
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    scroll-behavior: smooth;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--link-hover);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Removes extra space below images */
-}
-
-/* Header & Navigation */
-.header {
-    background-color: var(--card-background);
-    color: var(--text-color);
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-.logo a {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.nav ul li {
-    margin-left: 2rem;
-}
-
-.nav ul li a {
-    color: var(--text-color);
-    font-weight: 500;
-    padding: 0.5rem 0;
-    position: relative;
-}
-
-.nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;
-    margin-top: 5px;
-    right: 0;
-    background: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-.nav ul li a:hover::after,
-.nav ul li a.active::after {
-    width: 100%;
-    left: 0;
-    background: var(--primary-color);
-}
-
-/* Hero Section */
-.hero {
-    color: var(--text-color);
-    text-align: center;
-    padding: 6rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 70vh; /* Make hero section tall enough */
-    background-color: var(--background-color); /* Default if no inline style */
-}
-
-.hero-content {
-    max-width: 800px;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--secondary-color);
-}
-
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: var(--link-hover);
-}
-
-/* Section Styling */
-.section {
-    padding: 4rem 0;
-}
-
-/* Container for sections - ensures content within is centered */
-.section .container {
-    display: flex;
-    flex-direction: column; /* Stack children (header and content blocks) vertically */
-    align-items: center; /* Center children horizontally */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-/* Wrapper for section titles to guarantee centering */
-.section-header-wrapper {
-    width: 100%; /* Ensure the wrapper takes full width to correctly center h2 */
-    text-align: center; /* Center the h2 within this wrapper */
-    margin-bottom: 2.5rem; /* Space below the title */
-    position: relative; /* For the ::after pseudo-element */
-}
-
-.section-header-wrapper h2 {
-    font-size: 2.5rem;
-    margin: 0; /* Remove default h2 margins to control spacing via wrapper */
-    padding-bottom: 0.5rem;
-    display: inline-block; /* Allow the ::after line to align under the text */
-}
-
-.section-header-wrapper h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 80px;
-    height: 3px;
-    background-color: var(--primary-color);
-}
-
-/* Skills Sub-headers within About section */
-.skills-subheader {
-    font-size: 1.8rem; /* Slightly smaller than main section h2 */
-    margin-top: 3rem; /* Space above sub-header */
-    margin-bottom: 1.5rem; /* Space below sub-header */
-    text-align: center; /* Ensure sub-header is centered */
-    color: var(--primary-color); /* Give it an accent color (blue) */
-}
-
-
-/* About Section - Specific adjustments */
-.about-content {
-    display: flex; /* Keep it flex for internal content layout */
-    flex-direction: column; /* Stack its own children vertically */
-    align-items: center; /* Center its own children (like .about-text, skills-list) */
-    max-width: 800px; /* Max width for readability */
-    margin: 0; /* Remove margin auto here, parent .container handles centering */
-    padding: 0; /* Remove internal padding here if container already has it */
-    text-align: center; /* Fallback for text centering within .about-content */
-}
-
-.about-content .about-text {
-    text-align: left; /* Important: Keep the actual text paragraphs left-aligned for readability */
-    max-width: 700px; /* Max width for the text block */
-    margin-bottom: 2rem;
-}
-
-/* Updated style to make strong text within about-text use the new highlight color */
-.about-content .about-text strong {
-    color: var(--highlight-text-color); /* Uses the new subtle highlight color */
-}
-
-.about-text p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.skills-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 0.5rem; /* Reduced margin, as subheader has margin */
-    margin-bottom: 2rem; /* Space after the list */
-    max-width: 800px; /* Constrain width for centering */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.skills-list li {
-    background-color: var(--card-background);
-    border: 1px solid var(--border-color);
-    padding: 0.7rem 1.2rem;
-    margin: 0.5rem;
-    border-radius: 5px;
-    font-size: 0.95rem;
-    color: var(--text-color); /* Changed to text-color for contrast */
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Added color transition for hover */
-    cursor: pointer; /* Indicates it's interactive */
-}
-
-.skills-list li:hover {
-    background-color: var(--primary-color); /* Change background on hover */
-    transform: translateY(-3px); /* Subtle lift effect */
-    color: #fff; /* Ensure text is white on blue hover */
-}
-
-
-/* Projects Section (Gallery) */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.project-card {
-    background-color: var(--card-background);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: left;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* Ensures image covers the area nicely */
-    border-bottom: 1px solid var(--border-color);
-}
-
-.project-card-content {
-    padding: 1.5rem;
-}
-
-.project-card h3 {
-    margin-top: 0;
-    margin-bottom: 0.8rem;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
-
-.project-card p {
-    font-size: 0.95rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.project-card .btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.5rem;
-}
-
-/* Contact Section */
-.contact-info {
-    max-width: 600px;
-    margin: 0 auto; /* Ensures it centers itself if its parent doesn't handle it */
-    padding: 0; /* Remove internal padding here if container already has it */
-    text-align: center; /* Center its text content */
-}
-
-.contact-info p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    text-align: center; /* Ensure text within contact info is centered */
-}
-
-.contact-links {
-    list-style: none;
-    padding: 0;
-    margin-top: 2rem;
-    display: flex; /* Make it a flex container */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally in the column */
-}
-
-.contact-links li {
-    margin-bottom: 1rem;
-    text-align: center; /* Ensure text inside list item is centered if it wraps */
-}
-
-.contact-links li a {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center the link content itself */
-    font-size: 1.2rem;
-    color: var(--text-color);
-}
-
-.contact-links li a:hover {
-    color: var(--primary-color);
-}
-
-.contact-links i { /* For Font Awesome icons, if you add them later */
-    margin-right: 10px;
-    width: 24px; /* Ensure consistent spacing */
-    text-align: center;
-}
-
-
-/* Footer */
-.footer {
-    background-color: var(--card-background);
-    color: var(--secondary-color);
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 4rem;
-    border-top: 1px solid var(--border-color);
-}
-
-.social-links {
-    list-style: none;
-    padding: 0;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.social-links li a {
-    color: var(--secondary-color);
-    font-size: 1.5rem; /* Placeholder for icon size if you use them */
-    transition: color 0.3s ease;
-}
-
-.social-links li a:hover {
-    color: var(--primary-color);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: flex-start; /* Revert header container to align-items: flex-start on smaller screens for logo/nav stacking */
-    }
-
-    /* Adjust the main content sections' containers for responsive centering */
-    .section .container {
-        align-items: center; /* Keep content centered horizontally */
-        flex-direction: column;
-    }
-
-    .nav {
-        margin-top: 1rem;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .section h2 {
-        font-size: 2rem;
-    }
-
-    .skills-list {
-        justify-content: center; /* Ensure skills list centers on mobile */
-        text-align: center; /* Center skills text */
-    }
-
-    .project-card {
-        margin: 0 0.5rem; /* Add some side margin for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .btn {
-        padding: 0.6rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-    }
-}
-```
-I understand, Mckenzie. You want a more distinct but still "faint" blue for the highlighted text, not a flat color.
-
-I've updated the `--highlight-text-color` variable in your `style.css` in the Canvas to a slightly darker, yet still light and desaturated, blue (`#8FC0FF`). This should provide a more noticeable contrast against the default text while still maintaining that soft, non-overpowering feel you're looking for, rather than being "flat."
-
-Here is your updated `css/style.css` file:
-
-
-```css
-/* Basic Resets & Global Styles */
-:root {
-    --primary-color: #007bff; /* A nice blue for accents */
-    --secondary-color: #6c757d; /* A grey for secondary text */
-    --background-color: #1a1a1a; /* Dark background */
-    --card-background: #2a2a2a; /* Slightly brighter dark for cards */
-    --text-color: #f8f9fa; /* Light text */
     --highlight-text-color: #8FC0FF; /* Updated: A more distinct, faint blue for bold text */
     --link-hover: #0056b3; /* Darker blue on hover */
     --border-color: #444; /* Subtle border for elements */
@@ -923,3 +456,142 @@ img {
         font-size: 1.5rem;
     }
 }
+```
+You're exactly right to call me out on that, Mckenzie! My apologies. I got caught up in the details of the CSS and lost track of the main goal of preparing the project detail pages. That was entirely my mistake.
+
+The last `style.css` update was to fine-tune the color of the bold text and that one specific style. Your `index.html` from the previous turn, the one you just confirmed, is indeed the correct and up-to-date version for your homepage with the preview projects and "View All Projects" button.
+
+### Let's get back on track!
+
+You want to create the `project-details-X.html` pages.
+
+I will now provide the **template for a single `project-details.html` page**. You will need to create this new file and populate it with the template.
+
+**Crucial Steps for You:**
+
+1.  **Create the new HTML file:** In VS Code, right-click on your main `Kenz280604.github.io` folder and select **"New File."** Name this file `project-details-1.html` (or `ue5-fps-demo.html` if you prefer specific names).
+2.  **Paste the following code into `project-details-1.html`:**
+
+---
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Project 1 Title Here] | Mckenzie Knowles Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Optional: Add Font Awesome for icons if you want to use them for social links etc. -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+</head>
+<body>
+
+    <!-- Header - Consistent with your main site -->
+    <header class="header">
+        <div class="container">
+            <div class="logo"><a href="index.html#home">Mckenzie Knowles</a></div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="all-projects.html" class="active">Projects</a></li> <!-- Active for projects page -->
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Details Section -->
+    <section class="section" id="project-details" style="background-color: #1a1a1a;">
+        <div class="container">
+            <!-- Project Title (Always centered and at the top) -->
+            <div class="section-header-wrapper">
+                <h2>[Your Project 1 Title Here]</h2>
+            </div>
+            
+            <div class="project-detail-content">
+                <!-- YouTube Video Embed (Replace with your actual YouTube embed code) -->
+                <div class="video-container">
+                    <!-- Example YouTube Embed. Replace 'YOUR_VIDEO_ID' with the actual ID from your YouTube video URL. -->
+                    <!-- Go to your YouTube video -> Share -> Embed -> Copy the iframe code -->
+                    <iframe width="800" height="450" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                    <!-- Placeholder video if no embed is available yet -->
+                    <img src="https://placehold.co/800x450/2a2a2a/f8f9fa?text=Project+Video+Placeholder" alt="Project Video Placeholder" class="placeholder-video">
+                </div>
+
+                <!-- Project Overview/Description -->
+                <div class="detail-text">
+                    <h3>Project Overview</h3>
+                    <p>This section will provide a detailed description of [Your Project 1 Title]. Explain its purpose, the problem it solved, or the creative vision behind it.</p>
+                    <p>It's a [Type of game, e.g., FPS, Puzzle, Platformer] developed using [e.g., Unreal Engine 5] with a focus on [e.g., dynamic combat, environmental puzzles].</p>
+
+                    <h3>My Role & Contributions</h3>
+                    <p><strong>This is a critical section.</strong> Clearly articulate your specific responsibilities and what you personally built or contributed. Use action verbs and quantifiable results where possible.</p>
+                    <ul>
+                        <li>Implemented core gameplay loop and player mechanics using [e.g., Unreal Engine Blueprints/C++].</li>
+                        <li>Designed and developed AI behaviors for [e.g., enemies, NPCs] with [e.g., Behavior Trees, State Machines].</li>
+                        <li>Managed project tasks and team communication using [e.g., Jira, Trello, Azure DevOps].</li>
+                        <li>Created [e.g., inventory system, dialogue system, combat system] from scratch.</li>
+                        <li>(Add more bullet points for your specific tasks and achievements)</li>
+                    </ul>
+
+                    <h3>Core Mechanics & Technical Breakdown</h3>
+                    <p>Dive into the technical details of the game. What interesting systems did you implement? How did they work? What languages/tools did you use specifically for these mechanics?</p>
+                    <ul>
+                        <li><strong>Mechanic 1 (e.g., Dynamic Cover System):</strong> Description of how the system works and how you implemented it (e.g., "Built a flexible cover system that allowed players to dynamically snap to cover points, leveraging raycasts and animation blending in Unreal Engine Blueprints.").</li>
+                        <li><strong>Mechanic 2 (e.g., AI Pathfinding):</strong> Description and technical implementation (e.g., "Implemented custom AI pathfinding using a navmesh and A* algorithm in C++ to allow enemies to navigate complex environments efficiently.").</li>
+                        <li><strong>Tools/Languages:</strong> Unreal Engine 5, C++, Visual Studio, Git, [Any other relevant software like Maya, Blender, Photoshop, ZBrush, etc.].</li>
+                        <li><strong>Methodologies:</strong> Agile/Scrum (if applicable), Version Control best practices.</li>
+                    </ul>
+
+                    <h3>Challenges & Solutions</h3>
+                    <p>Discuss a significant problem you encountered during development and how you approached solving it. This demonstrates your problem-solving abilities and resilience.</p>
+                    <p><em>Example: "During development, we faced challenges optimizing performance with multiple AI characters in complex scenes. I addressed this by implementing object pooling for AI and refining their animation states to reduce overhead, resulting in a stable 60 FPS."</em></p>
+
+                    <h3>Lessons Learned</h3>
+                    <p>Reflect on what you learned from the project, both technically and personally. This shows growth and a capacity for self-improvement.</p>
+                    <p><em>Example: "Learned the critical importance of modular design for complex systems, which significantly improved iteration speed. Also, gained valuable experience in collaborative debugging within a team environment."</em></p>
+                </div>
+
+                <!-- Screenshots Gallery -->
+                <h3 class="gallery-subheader">Screenshots</h3>
+                <div class="screenshot-grid">
+                    <img src="https://placehold.co/400x250/333333/ffffff?text=Screenshot+1" alt="Screenshot 1 of Project">
+                    <img src="https://placehold.co/400x250/333333/ffffff?text=Screenshot+2" alt="Screenshot 2 of Project">
+                    <img src="https://placehold.co/400x250/333333/ffffff?text=Screenshot+3" alt="Screenshot 3 of Project">
+                    <img src="https://placehold.co/400x250/333333/ffffff?text=Screenshot+4" alt="Screenshot 4 of Project">
+                    <!-- Add more images as needed. You can arrange them as you like. -->
+                </div>
+
+                <!-- Project Links -->
+                <div class="project-links">
+                    <a href="YOUR_GITHUB_REPO_LINK" target="_blank" class="btn">View on GitHub (If Public)</a>
+                    <!-- Optional: Add a link to a playable build if available -->
+                    <!-- <a href="LINK_TO_PLAYABLE_BUILD" target="_blank" class="btn">Download Playable Build</a> -->
+                </div>
+
+                <!-- Back to Projects Button -->
+                <div style="text-align: center; margin-top: 4rem; width: 100%;">
+                    <a href="all-projects.html" class="btn">← Back to All Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Consistent with your main site -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mckenzie Knowles. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="https://www.linkedin.com/in/mckenzie-knowles-2722571b1/" target="_blank" aria-label="LinkedIn">LinkedIn</a></li>
+                <li><a href="https://github.com/Kenz280604" target="_blank" aria-label="GitHub">GitHub</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
