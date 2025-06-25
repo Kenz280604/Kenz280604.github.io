@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Project 1 Title Here] | Mckenzie Knowles Portfolio</title>
+    <title>[Your Project Title Here] | Mckenzie Knowles Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- Optional: Add Font Awesome for icons if you want to use them for social links etc. -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
@@ -17,7 +17,7 @@
             <nav class="nav">
                 <ul>
                     <li><a href="index.html#home">Home</a></li>
-                    <li><a href="all-projects.html" class="active">Projects</a></li> <!-- Active for projects page -->
+                    <li><a href="all-projects.html" class="active">Projects</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
@@ -30,10 +30,23 @@
         <div class="container">
             <!-- Project Title (Always centered and at the top) -->
             <div class="section-header-wrapper">
-                <h2>[Your Project 1 Title Here]</h2>
+                <h2>[Your Project Title Here]</h2>
             </div>
             
             <div class="project-detail-content">
+                <!-- Project At a Glance / Quick Facts -->
+                <div class="project-summary-box">
+                    <h3>Project At a Glance</h3>
+                    <ul>
+                        <li><strong>My Role:</strong> [e.g., Gameplay Programmer, AI Engineer, Technical Artist, Team Lead]</li>
+                        <li><strong>Project Duration:</strong> [e.g., 8 Weeks, 3 Months, Semester Project]</li>
+                        <li><strong>Team Size:</strong> [e.g., Solo Project, Team of 4 Developers]</li>
+                        <li><strong>Key Tools & Technologies:</strong> [e.g., Unreal Engine 5 (Blueprints/C++), Visual Studio, Git, Jira, Blender]</li>
+                        <li><strong>Core Focus:</strong> [e.g., Combat AI, Physics-based Puzzles, Dynamic Level Generation]</li>
+                        <li><strong>Platform:</strong> [e.g., PC, Mobile, VR]</li>
+                    </ul>
+                </div>
+
                 <!-- YouTube Video Embed (Replace with your actual YouTube embed code) -->
                 <div class="video-container">
                     <!-- Example YouTube Embed. Replace 'YOUR_VIDEO_ID' with the actual ID from your YouTube video URL. -->
@@ -47,36 +60,34 @@
 
                 <!-- Project Overview/Description -->
                 <div class="detail-text">
-                    <h3>Project Overview</h3>
-                    <p>This section will provide a detailed description of [Your Project 1 Title]. Explain its purpose, the problem it solved, or the creative vision behind it.</p>
-                    <p>It's a [Type of game, e.g., FPS, Puzzle, Platformer] developed using [e.g., Unreal Engine 5] with a focus on [e.g., dynamic combat, environmental puzzles].</p>
+                    <h3>1. Project Overview & Vision</h3>
+                    <p>Provide a compelling introduction to the project. What is it? What's the core idea or vision? What kind of experience does it aim to deliver?</p>
+                    <p>Contextualize the project: Was it for a class, a personal endeavor, or a game jam? What was the overall goal?</p>
 
-                    <h3>My Role & Contributions</h3>
-                    <p><strong>This is a critical section.</strong> Clearly articulate your specific responsibilities and what you personally built or contributed. Use action verbs and quantifiable results where possible.</p>
+                    <h3>2. My Specific Role & Contributions</h3>
+                    <p><strong>This is your chance to shine.</strong> Detail exactly what you were responsible for and what you accomplished. Be specific, use action verbs, and quantify your impact where possible.</p>
                     <ul>
-                        <li>Implemented core gameplay loop and player mechanics using [e.g., Unreal Engine Blueprints/C++].</li>
-                        <li>Designed and developed AI behaviors for [e.g., enemies, NPCs] with [e.g., Behavior Trees, State Machines].</li>
-                        <li>Managed project tasks and team communication using [e.g., Jira, Trello, Azure DevOps].</li>
-                        <li>Created [e.g., inventory system, dialogue system, combat system] from scratch.</li>
-                        <li>(Add more bullet points for your specific tasks and achievements)</li>
+                        <li><strong>[Area 1, e.g., Player Mechanics]:</strong> Designed and implemented the responsive character controller, including movement, jumping, and [specific actions like wall-running or grappling hook] using [e.g., C++ in Unreal Engine].</li>
+                        <li><strong>[Area 2, e.g., AI System]:</strong> Developed an adaptable enemy AI behavior tree that allowed for [e.g., patrol, attack, retreat] states, integrating sensory perception (line of sight, sound) and navigation via [e.g., NavMesh system].</li>
+                        <li><strong>[Area 3, e.g., Tools/Workflow]:</strong> Contributed to the team's version control strategy using Git, including branching models and conflict resolution. Developed custom Blueprint libraries to streamline common development tasks for designers.</li>
+                        <li>(Add more bullet points for your specific, impactful tasks and achievements)</li>
                     </ul>
 
-                    <h3>Core Mechanics & Technical Breakdown</h3>
-                    <p>Dive into the technical details of the game. What interesting systems did you implement? How did they work? What languages/tools did you use specifically for these mechanics?</p>
+                    <h3>3. Technical Deep Dive: Mechanics & Implementation</h3>
+                    <p>Go into detail about the most interesting technical aspects you worked on. Explain the "how." How were complex features built? What patterns or algorithms did you use?</p>
                     <ul>
-                        <li><strong>Mechanic 1 (e.g., Dynamic Cover System):</strong> Description of how the system works and how you implemented it (e.g., "Built a flexible cover system that allowed players to dynamically snap to cover points, leveraging raycasts and animation blending in Unreal Engine Blueprints.").</li>
-                        <li><strong>Mechanic 2 (e.g., AI Pathfinding):</strong> Description and technical implementation (e.g., "Implemented custom AI pathfinding using a navmesh and A* algorithm in C++ to allow enemies to navigate complex environments efficiently.").</li>
-                        <li><strong>Tools/Languages:</strong> Unreal Engine 5, C++, Visual Studio, Git, [Any other relevant software like Maya, Blender, Photoshop, ZBrush, etc.].</li>
-                        <li><strong>Methodologies:</strong> Agile/Scrum (if applicable), Version Control best practices.</li>
+                        <li><strong>[Mechanic X]:</strong> Briefly describe the mechanic (e.g., "The dynamic weather system"). Then, explain its technical implementation (e.g., "Implemented a data-driven system in C++ that procedurally generated weather patterns based on real-world meteorological data, influencing gameplay mechanics like player speed and visibility.").</li>
+                        <li><strong>[System Y]:</strong> Briefly describe the system (e.g., "Modular Inventory System"). Then, explain the technical approach (e.g., "Designed a flexible, extensible inventory using data assets and Blueprint interfaces, allowing designers to easily add new items and define their properties without code changes.").</li>
+                        <li>Mention specific APIs, libraries, or engine features you utilized.</li>
                     </ul>
 
-                    <h3>Challenges & Solutions</h3>
-                    <p>Discuss a significant problem you encountered during development and how you approached solving it. This demonstrates your problem-solving abilities and resilience.</p>
-                    <p><em>Example: "During development, we faced challenges optimizing performance with multiple AI characters in complex scenes. I addressed this by implementing object pooling for AI and refining their animation states to reduce overhead, resulting in a stable 60 FPS."</em></p>
+                    <h3>4. Challenges Faced & Solutions</h3>
+                    <p>Every project has challenges. This section demonstrates your problem-solving skills, resilience, and learning capacity. Describe a specific technical or design problem and how you overcame it.</p>
+                    <p><em>Example: "Encountered significant performance bottlenecks when rendering large open-world environments. Diagnosed the issue using profiling tools and optimized asset streaming and level culling, resulting in a 25% frame rate improvement."</em></p>
 
-                    <h3>Lessons Learned</h3>
-                    <p>Reflect on what you learned from the project, both technically and personally. This shows growth and a capacity for self-improvement.</p>
-                    <p><em>Example: "Learned the critical importance of modular design for complex systems, which significantly improved iteration speed. Also, gained valuable experience in collaborative debugging within a team environment."</em></p>
+                    <h3>5. Lessons Learned & Future Scope</h3>
+                    <p>Reflect on what you gained from this project. What new skills did you acquire? What would you do differently next time? This shows maturity and a growth mindset.</p>
+                    <p>Consider mentioning any potential future features or expansions for the project, showing foresight.</p>
                 </div>
 
                 <!-- Screenshots Gallery -->
@@ -89,7 +100,7 @@
                     <!-- Add more images as needed. You can arrange them as you like. -->
                 </div>
 
-                <!-- Project Links -->
+                <!-- Project Links (Buttons at the bottom) -->
                 <div class="project-links">
                     <a href="YOUR_GITHUB_REPO_LINK" target="_blank" class="btn">View on GitHub (If Public)</a>
                     <!-- Optional: Add a link to a playable build if available -->
