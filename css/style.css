@@ -388,71 +388,198 @@ img {
     color: var(--primary-color);
 }
 
-/* Responsive Design */
+/* --- Project Details Page Specific Styles --- */
+
+/* New: Styling for the top-left back button container */
+.project-header-top-nav {
+    width: 100%; /* Take full width to allow button to align left */
+    text-align: left; /* Align button to the left */
+    margin-bottom: 2rem; /* Space below the button */
+    padding-left: 1.5rem; /* Match container padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.project-header-top-nav .btn {
+    padding: 0.6rem 1.2rem; /* Slightly smaller button for top-left */
+    font-size: 0.95rem;
+    background-color: var(--card-background); /* Make it subtle */
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.project-header-top-nav .btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+.project-detail-content {
+    width: 100%; /* Take full width of its parent container */
+    max-width: 900px; /* Max width for content readability */
+    /* Removed margin-top, as project-header-top-nav handles spacing */
+    color: var(--text-color); /* Ensure text color is consistent */
+    text-align: left; /* Default text alignment for details */
+}
+
+.project-detail-content h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color); /* Subtle line under subheadings */
+    padding-bottom: 0.5rem;
+    text-align: left; /* Keep subheadings left-aligned for long-form content */
+}
+
+.project-detail-content p, .project-detail-content ul {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.project-detail-content ul {
+    list-style: disc; /* Use discs for bullet points */
+    margin-left: 20px; /* Indent bullet points */
+    padding-left: 0;
+}
+
+.project-detail-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.project-detail-content strong {
+    color: var(--highlight-text-color); /* Use the highlight color for bold text in details too */
+}
+
+/* Project Summary Box */
+.project-summary-box {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px; /* Limit width for readability of summary */
+    text-align: left; /* Ensure text inside is left-aligned */
+    margin-left: auto; /* Center the summary box */
+    margin-right: auto; /* Center the summary box */
+}
+
+.project-summary-box h3 {
+    text-align: center; /* Center its own title */
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.project-summary-box ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.project-summary-box ul li {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+.project-summary-box ul li strong {
+    color: var(--highlight-text-color); /* Highlight key facts */
+    margin-right: 0.5rem;
+}
+
+/* Video Container */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100%) */
+    height: 0;
+    overflow: hidden;
+    background-color: var(--card-background); /* Placeholder background for video area */
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.video-container iframe { /* Removed .placeholder-video from this rule */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Screenshot Gallery */
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax for better fitting */
+    gap: 1.5rem; /* Increased gap slightly */
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.screenshot-grid img {
+    width: 100%;
+    height: auto; /* Ensures images scale responsively */
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio for consistency */
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.screenshot-grid img:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* Project Links (Buttons at the bottom) */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center buttons */
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-links .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Responsive adjustments for project detail page */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: flex-start; /* Revert header container to align-items: flex-start on smaller screens for logo/nav stacking */
+    .project-detail-content h3 {
+        font-size: 1.5rem;
     }
-
-    /* Adjust the main content sections' containers for responsive centering */
-    .section .container {
-        align-items: center; /* Keep content centered horizontally */
-        flex-direction: column;
+    .project-detail-content p, .project-detail-content ul {
+        font-size: 1rem;
     }
-
-    .nav {
-        margin-top: 1rem;
+    .video-container {
         width: 100%;
+        height: auto;
+        padding-bottom: 56.25%; /* Maintain aspect ratio */
+    }
+    .project-links {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+    .project-links .btn {
+        width: 100%; /* Full width buttons on small screens */
         text-align: center;
     }
-
-    .nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .section h2 {
-        font-size: 2rem;
-    }
-
-    .skills-list {
-        justify-content: center; /* Ensure skills list centers on mobile */
-        text-align: center; /* Center skills text */
-    }
-
-    .project-card {
-        margin: 0 0.5rem; /* Add some side margin for smaller screens */
+    .project-header-top-nav {
+        padding-left: 0; /* Remove padding to make button truly edge-to-edge on mobile */
+        text-align: center; /* Center the back button on mobile */
     }
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .btn {
-        padding: 0.6rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    .logo {
-        font-size: 1.5rem;
+    .screenshot-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
     }
 }

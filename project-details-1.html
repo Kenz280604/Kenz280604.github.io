@@ -28,6 +28,11 @@
     <!-- Project Details Section -->
     <section class="section" id="project-details" style="background-color: #1a1a1a;">
         <div class="container">
+            <!-- New: Back to Projects button in the top left -->
+            <div class="project-header-top-nav">
+                <a href="all-projects.html" class="btn back-to-projects-top">← Back to Projects</a>
+            </div>
+
             <!-- Project Title (Always centered and at the top) -->
             <div class="section-header-wrapper">
                 <h2>[Your Project Title Here]</h2>
@@ -47,15 +52,14 @@
                     </ul>
                 </div>
 
-                <!-- YouTube Video Embed (Replace with your actual YouTube embed code) -->
+                <!-- YouTube Video Embed (Only YouTube embed) -->
                 <div class="video-container">
-                    <!-- Example YouTube Embed. Replace 'YOUR_VIDEO_ID' with the actual ID from your YouTube video URL. -->
-                    <!-- Go to your YouTube video -> Share -> Embed -> Copy the iframe code -->
+                    <!-- IMPORTANT: Replace 'YOUR_VIDEO_ID_HERE' with the actual ID from your YouTube video URL. -->
+                    <!-- Example: for https://www.youtube.com/watch?v=dQw4w9WgXcQ, the ID is dQw4w9WgXcQ -->
+                    <!-- Go to your YouTube video -> Share -> Embed -> Copy the iframe code and just use the src value -->
                     <iframe width="800" height="450" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" 
                             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen></iframe>
-                    <!-- Placeholder video if no embed is available yet -->
-                    <img src="https://placehold.co/800x450/2a2a2a/f8f9fa?text=Project+Video+Placeholder" alt="Project Video Placeholder" class="placeholder-video">
                 </div>
 
                 <!-- Project Overview/Description -->
@@ -74,7 +78,7 @@
                     </ul>
 
                     <h3>3. Technical Deep Dive: Mechanics & Implementation</h3>
-                    <p>Go into detail about the most interesting technical aspects you worked on. Explain the "how." How were complex features built? What patterns or algorithms did you use?</p>
+                    <p>Go into detail about the most interesting technical aspects you worked on. Explain the "how." How were complex features built? What patterns or algorithms did you use? What languages/tools did you use specifically for these mechanics?</p>
                     <ul>
                         <li><strong>[Mechanic X]:</strong> Briefly describe the mechanic (e.g., "The dynamic weather system"). Then, explain its technical implementation (e.g., "Implemented a data-driven system in C++ that procedurally generated weather patterns based on real-world meteorological data, influencing gameplay mechanics like player speed and visibility.").</li>
                         <li><strong>[System Y]:</strong> Briefly describe the system (e.g., "Modular Inventory System"). Then, explain the technical approach (e.g., "Designed a flexible, extensible inventory using data assets and Blueprint interfaces, allowing designers to easily add new items and define their properties without code changes.").</li>
@@ -97,7 +101,7 @@
                     <img src="https://placehold.co/400x250/333333/ffffff?text=Screenshot+2" alt="Screenshot 2 of Project">
                     <img src="https://placehold.co/400x250/333333/ffffff?text=Screenshot+3" alt="Screenshot 3 of Project">
                     <img src="https://placehold.co/400x250/333333/ffffff?text=Screenshot+4" alt="Screenshot 4 of Project">
-                    <!-- Add more images as needed. You can arrange them as you like. -->
+                    <!-- Add more images as needed. The grid will arrange them side-by-side or stack them responsively. -->
                 </div>
 
                 <!-- Project Links (Buttons at the bottom) -->
@@ -107,7 +111,7 @@
                     <!-- <a href="LINK_TO_PLAYABLE_BUILD" target="_blank" class="btn">Download Playable Build</a> -->
                 </div>
 
-                <!-- Back to Projects Button -->
+                <!-- Back to Projects Button (centralized) -->
                 <div style="text-align: center; margin-top: 4rem; width: 100%;">
                     <a href="all-projects.html" class="btn">← Back to All Projects</a>
                 </div>
